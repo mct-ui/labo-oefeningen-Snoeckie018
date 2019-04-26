@@ -2,6 +2,24 @@
   #FONTS
 \*------------------------------------*/
 
+@font-face {
+    font-family: "ClearSans";
+    font-weight: 200;
+    src:url("../fonts/ClearSans-Light-webfont.woff") format("woff");
+}
+
+@font-face {
+    font-family: "ClearSans";
+    font-weight: 400;
+    src:url("../fonts/ClearSans-Medium-webfont.woff") format("woff");
+}
+
+@font-face {
+    font-family: "ClearSans";
+    font-weight: 600;
+    src:url("../fonts/ClearSans-Regular-webfont.woff") format("woff");
+}
+
 /*------------------------------------*\
   #GENERIC
 \*------------------------------------*/
@@ -13,12 +31,16 @@
 */
 
 html {
-    font-size: 16px;
-    line-height: 24px;
-    font-family: Helvetica, arial, sans-serif;
+    font-size: 18px;
+    line-height: 32px;
+    font-family: "ClearSans", Helvetica, arial, sans-serif;
+    font-weight: 200;
+    color: white;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-image: linear-gradient(to bottom right, #0A257D, #061649);
+    background-attachment: fixed;
 }
 
 *,
@@ -196,6 +218,11 @@ a:focus {
     }
 }
 
+.o-list {
+    list-style: none;
+    padding: 0;
+}
+
 /*
     Objects: Container
     ---
@@ -205,7 +232,7 @@ a:focus {
 .o-container {
     margin-left: auto;
     margin-right: auto;
-    max-width: 56.4em; /* 56.4 * 20px = 1128px */
+    max-width: 71em; /* 56.4 * 20px = 1128px BUT 1278px / 18px = 71.0*/
 }
 
 /*
@@ -366,6 +393,112 @@ a:focus {
 /*------------------------------------*\
   #COMPONENTS
 \*------------------------------------*/
+
+.c-logo-header {
+    max-height: 32px;
+    float: left;
+}
+
+/*
+    Component: Nav
+    ---
+    Main navigation of the site
+*/
+
+.c-nav {
+    float: right;
+    margin-top: 8px;
+    font-size: 13px;
+    line-height: 24px;
+    font-weight: 600;
+}
+
+.c-nav__header {
+    display: flex;
+    justify-content: space-around;
+    align-content: flex-end;
+}
+
+.c-nav__link {
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 0;
+    margin-top: 8px;
+}
+
+.c-nav__link .is-selected,
+.c-nav__link:hover,
+.c-nav__link:focus {
+    color: #DBEDFF;
+    text-shadow: 0 0 10px #FFFFFF;
+}
+
+/*
+    Component: CTA link
+    ---
+    Small cta link with custom animation
+*/
+
+.c-link-cta {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: inline-block;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    background-image: linear-gradient(to right, #012C90 0%, #033ED3 51%, #012C90 100%);
+    border: 1px solid #1D59BA;
+    padding: 24px 36px 24px 36px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+}
+
+.c-link-cta__nav {
+    display: inline;
+}
+
+.c-link-cta,
+.c-link-cta:visited,
+.c-link-cta:active {
+    color: #FFFFFF;
+}
+
+.c-link-cta:hover {
+    background-position: right center;
+}
+
+/*
+    Component: figure and figcaption
+    ---
+    Main navigation of the site
+*/
+
+.c-figure {
+    position: relative;
+}
+
+.c-figure__image {
+    width: 100%;
+}
+
+.c-figure__caption {
+    position: absolute;
+    max-width: 22%;
+    top: 8px;
+    right: 8px;
+    text-align: right;
+    padding: 20px;
+    margin: 0;
+    color: black;
+    background-color: #FFFFFF;
+    border-right: 5px solid #033ED3;
+}
 
 /*------------------------------------*\
   #UTILITIES
